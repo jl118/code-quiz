@@ -34,3 +34,4 @@ Mobile Layout:
 
 ## Link to the Deployed Page
 
+https://jl118.github.io/code-quiz/
