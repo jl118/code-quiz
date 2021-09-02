@@ -1,3 +1,4 @@
+// declared variables
 var quizQuestions = document.getElementById("quiz-questions");
 var timeLeft = document.getElementById("time-left");
 var timer = document.getElementById("timer");
@@ -11,10 +12,11 @@ var info = document.getElementById("quiz-info");
 var addScore = document.getElementById("add-score");
 var currentIndex = 0;
 var score = 0;
-var count = 100;
+var count = 60;
 var allScores = [];
 var storedScores = JSON.parse(localStorage.getItem("userData"));
 
+// question array
 var questions = [
     {
         title: "In which HTML element do we link JavaScript?",
@@ -93,11 +95,13 @@ function startQuiz() {
 
 };
 
+// adds event listener to the submit score button
 scoreBtn.addEventListener("click", function (){
     let name = document.getElementById("input-initials").value;
     recordScore(name, count);
 });
 
+// sets the countdown interval and prevents negative scores
 function scoreTime() {
     timerCount = setInterval(function() {
         count--;
@@ -111,6 +115,7 @@ function scoreTime() {
     
 };
 
+// writes the score and initials to local storage to be displayed in the high scores page
 function recordScore(a, b) {
     var userData = {
         inits: a,
@@ -122,6 +127,7 @@ function recordScore(a, b) {
     location.href = "highscores.html";
 };
 
+// displays the question and creates buttons from the potential answers and calls for the next question on click
 function displayQuestion(question) {
     qTitle.innerText = question.title;
     question.choices.forEach(element => {
@@ -133,6 +139,7 @@ function displayQuestion(question) {
     });
 };
 
+// display next question function
 function displayNextQuestion(e) {
     currentIndex++;
     if(currentIndex < questions.length) {
@@ -151,6 +158,7 @@ function displayNextQuestion(e) {
     };
 };
 
+// answer feedback function
 function qFeedback(response) {
     if(response) {
         feedback.innerText = "Correct!";
@@ -162,16 +170,17 @@ function qFeedback(response) {
         console.log("Incorrect");
     };
 
+    // pauses the countdown for a second so user can read the feedback
     setTimeout(function() {
         feedback.innerText = ""
     }, 1000 );
 };
 
+// game over function that hides the questions and timer and displays the final score
 function gameOver() {
     newScore.innerText = count;
     addScore.style.display = "block";
     timer.style.display = "none";
     quizQuestions.style.display = "none";
-
-}
+};
 

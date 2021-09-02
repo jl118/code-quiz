@@ -20,7 +20,7 @@
         </p>
         <div class="timer" id="timer">
             <p>
-                Time: <span id="time-left">100</span>
+                Time: <span id="time-left">60</span>
             </p>
         </div>
 
@@ -37,7 +37,7 @@
             <div>
                 <!-- info before starting the quiz -->
                 <p id="quiz-info">
-                    Try to answer the following JavaScript-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by 10 seconds.
+                    Try to answer the following 10 JavaScript-related questions in less than 60 seconds. Keep in mind that incorrect answers will penalize your score time by 10 seconds, and if you run out of time, the game is over!
                 </p>
                 <!-- quiz start button -->
                 <button class="btn start-btn" id="start-btn">Start Quiz</button>
@@ -58,6 +58,7 @@
                 <h3>
                     <span id="score"></span>
                 </h3>
+                <!-- text input for user's initials -->
                 <input type="text" class="input-initials" placeholder="Enter Your Initials" id="input-initials">
                 <div class="input-append">
                     <button class="btn score-btn" id="score-btn">
@@ -69,7 +70,8 @@
         </div>
 
     </div>
-  
+
+    <!-- javascript -->
     <script src="assets/js/script.js"></script>
 </body>
 
