@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timed JavaScript Quiz</title>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- high score link and timer -->
+    <div class="flex">
+        <p class="high-scores">
+            <a href="highscores.html">
+                View High Scores
+            </a>
+        </p>
+        <div class="timer" id="timer">
+            <p>
+                Time: <span id="time-left">100</span>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- changing text container -->
+    <div class="container">
+        <div class="game-box">
+            <div class="quiz-title" id="quiz-title">
+                <h1>JavaScript Quiz</h1>
+            </div>
+
+            <!-- before starting the quiz -->
+            <div>
+                <!-- info before starting the quiz -->
+                <p id="quiz-info">
+                    Try to answer the following JavaScript-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by 10 seconds.
+                </p>
+                <!-- quiz start button -->
+                <button class="btn start-btn" id="start-btn">Start Quiz</button>
+            </div>
+
+            <!-- quiz questions -->
+            <div class="quiz-questions" id="quiz-questions">
+                <h2 class="question-title" id="question-title">
+                    Question placeholder.
+                </h2>
+                <div class="q-answers" id="q-answers">
+                </div>
+                <h4 id="feedback"></h4>
+            </div>
+
+            <!-- score input -->
+            <div class="input-section" id="add-score">
+                <h3>
+                    <span id="score"></span>
+                </h3>
+                <input type="text" class="input-initials" placeholder="Enter Your Initials" id="input-initials">
+                <div class="input-append">
+                    <button class="btn score-btn" id="score-btn">
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+  
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
