@@ -7,7 +7,11 @@ var clearBtn = document.querySelector("#clear-btn");
 // display high scores function
 function displayScores() {
     if (storedScores !== null) {
-        // creates an ordered list from the scores
+        // sorts the saved scores from high to low
+        storedScores = storedScores.sort(function(a, b) {
+            return b.userScore - a.userScore
+        });
+        // creates the ordered list from the scores
         var scoreList = document.createElement("ol");
         scoreList.className = "scoreListClass";
         for (var i = 0; i < storedScores.length; i++) {
